@@ -1,20 +1,36 @@
-<style>
-.hidden { display: none; }
-.trigger {
-    color: blue;
-    cursor: pointer;
-    text-decoration: underline;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+.toggle-text {
+display: none;
 }
-</style>
-<p>
-    某些可见文字 
-    <span class="trigger" onclick="toggleHidden()">点击此处</span>
-    查看隐藏内容。
-</p>
-<div id="hiddenContent" class="hidden">这是被隐藏的内容。</div>
+
+.container {
+margin: 20px;
+}
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toggle Text</title>
+</head>
+    
+<body>
+<div class="container">
+<p>When you take a cold shower it immediately get that <span class="toggle-text">immediate energy</span>. It will give you <span class="toggle-text">energy</span>. And if this is something you will <span class="toggle-text">repeat</span>, it becomes a habit for you. It will become <span class="toggle-text">habit</span> and again this is where you <span class="toggle-text">start</span> and where you’re actually really starting to feel yourself. <span class="toggle-text">Self-confidence</span> I feel that’s something very often we try to find from our external world right. What other people think of us, how we <span class="toggle-text">perceive</span>, But at the end your <span class="toggle-text">confidence</span> comes from within.</p >
+<button id="toggleButton">点击方框查看答案</button>
+</div>
+    
 <script>
-function toggleHidden() {
-    const content = document.getElementById('hiddenContent');
-    content.classList.toggle('hidden');
+document.getElementById('toggleButton').addEventListener('click', function() {
+var toggleTexts = document.querySelectorAll('.toggle-text');
+toggleTexts.forEach(function(text) {
+if (text.style.display === 'none' || text.style.display === '') {
+text.style.display = 'inline';
+} else {
+text.style.display = 'none';
 }
+});
+});
 </script>
+</body>
+</html>
